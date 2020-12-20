@@ -36,7 +36,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        $("[data-test-id='success-notification']").waitUntil(visible, 15000).shouldHave(text(date));
+        $("[data-test-id='success-notification']").waitUntil(visible, 15000)
+                .shouldHave(text(date));
 
     }
     @Test
@@ -47,7 +48,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        $("[data-test-id='success-notification']").waitUntil(visible, 15000).shouldHave(text(date));
+        $("[data-test-id='success-notification']").waitUntil(visible, 15000)
+                .shouldHave(text(date));
         open("http://localhost:9999");
         form.$("[data-test-id='city'] input").setValue(city);
         form.$("[data-test-id=date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
@@ -56,9 +58,11 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        $("[data-test-id='replan-notification']").waitUntil(visible, 15000).shouldHave(text("Перепланировать"));
+        $("[data-test-id='replan-notification']").waitUntil(visible, 15000)
+                .shouldHave(text("Перепланировать"));
         $("[data-test-id='replan-notification'] .button__content").click();
-        $("[data-test-id='success-notification']").waitUntil(visible, 15000).shouldHave(text(dateReplan));
+        $("[data-test-id='success-notification']").waitUntil(visible, 15000)
+                .shouldHave(text(dateReplan));
     }
 
     @Test
@@ -69,7 +73,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        form.$("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible).shouldHave(text("Поле обязательно для заполнения"));
+        form.$("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible)
+                .shouldHave(text("Поле обязательно для заполнения"));
     }
 
     @Test
@@ -81,7 +86,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        form.$("[data-test-id='city'] .input__sub").shouldBe(visible).shouldHave(text("Доставка в выбранный город недоступна"));
+        form.$("[data-test-id='city'] .input__sub").shouldBe(visible)
+                .shouldHave(text("Доставка в выбранный город недоступна"));
     }
 
     @Test
@@ -104,7 +110,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        form.$("[data-test-id='date'] .input__sub").shouldBe(visible).shouldHave(text("Заказ на выбранную дату невозможен"));
+        form.$("[data-test-id='date'] .input__sub").shouldBe(visible)
+                .shouldHave(text("Заказ на выбранную дату невозможен"));
     }
 
     @Test
@@ -115,7 +122,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        form.$("[data-test-id='name'] .input__sub").shouldBe(visible).shouldHave(text("Поле обязательно для заполнения"));
+        form.$("[data-test-id='name'] .input__sub").shouldBe(visible)
+                .shouldHave(text("Поле обязательно для заполнения"));
     }
 
     @Test
@@ -126,7 +134,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='name'] input").setValue(name);
         form.$("[data-test-id='agreement']").click();
         form.$(".button__content").click();
-        form.$("[data-test-id='phone'] .input__sub").shouldBe(visible).shouldHave(text("Поле обязательно для заполнения"));
+        form.$("[data-test-id='phone'] .input__sub").shouldBe(visible)
+                .shouldHave(text("Поле обязательно для заполнения"));
     }
 
     @Test
@@ -137,7 +146,8 @@ public class AppCardDeliveryTest {
         form.$("[data-test-id='name'] input").setValue(name);
         form.$("[data-test-id='phone'] input").setValue(phone);
         form.$(".button__content").click();
-        form.$("[data-test-id='agreement'].input_invalid").shouldBe(visible).shouldHave(text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
+        form.$("[data-test-id='agreement'].input_invalid").shouldBe(visible)
+                .shouldHave(text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
     }
 
 }
