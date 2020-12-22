@@ -1,13 +1,19 @@
 package ru.netology;
 
+import com.github.javafaker.Faker;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 
 public class DataGenerator {
