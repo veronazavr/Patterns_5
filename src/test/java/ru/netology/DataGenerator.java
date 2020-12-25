@@ -12,11 +12,13 @@ import java.util.Locale;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 
 public class DataGenerator {
+
+    private DataGenerator() {
+    }
 
         public static <T> T getRandom(List<T> list) {
             Random random = new Random();
